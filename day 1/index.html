@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script type="text/javascript" src="day 1.js"></script>
+	
+	<link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
+
+	<title>Advent of Code - Day 1</title>
+</head>
+<body ng-app="floorApp" ng-controller="whatFloorCtrl as ctrl">
+	<div class="container">
+	<h2>Advent of Code - Day 1</h2>
+	Santa is trying to deliver presents in a large apartment building, but he can't find the right floor - the directions he got are a little confusing.<br> 
+	He starts on the ground floor (floor 0) and then follows the instructions one character at a time.<br>
+
+	An opening parenthesis, (, means he should go up one floor, and a closing parenthesis, ), means he should go down one floor.<br>
+
+	The apartment building is very tall, and the basement is very deep; he will never find the top or bottom floors.<br><br>
+
+	For example:<br>
+	<ul>
+	<li>(()) and ()() both result in floor 0.</li>
+	<li>((( and (()(()( both result in floor 3.</li>
+	<li>))((((( also results in floor 3.</li>
+	<li>()) and ))( both result in floor -1 (the first basement level).</li>
+	<li>))) and )())()) both result in floor -3.</li>
+	</ul>
+	
+	To what floor do the instructions take Santa?<p>
+	
+	<form ng-submit="ctrl.calculate(directions)">
+        <div>
+			<input ng-model="directions">
+			<span>
+				<button type="submit" ng-click="ctrl.showAnswer()">What floor?</button>
+			</span>
+        </div>  
+    </form>
+	
+	<span ng-show="ctrl.show">The instructions lead Santa to floor {{ctrl.answer}}.</span>
+	
+	</div>
+</body>
+</html>
