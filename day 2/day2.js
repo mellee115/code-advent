@@ -7,6 +7,9 @@ function wrappingPaperCtrl(){
 angular.module('wrappingPaperApp').controller('wrappingPaperCtrl', wrappingPaperCtrl);
 
 wrappingPaperCtrl.prototype.calculate = function(l,w,h){
+
+	//does not account for empty input
+
 	let total = 0;
 	
 	//determining the slack needed
